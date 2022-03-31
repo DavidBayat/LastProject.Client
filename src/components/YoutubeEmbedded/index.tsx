@@ -1,4 +1,5 @@
 import React from "react";
+import "./YoutubeEmbedded.css"
 
 function YoutubeEmbedded({ embedId } : any) {
     return (
