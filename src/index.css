@@ -15,7 +15,9 @@
   --smallWidth: 85vw;
   --maxWidth: 40rem;
   --fullWidth: 1170px;
-  --primaryColor: #dd443e;
+  --primaryColor: #2d8de0;
+  --primaryLightColor: #eeeaea;
+  --lightDeColor: #0ad8f3;
 }
 * {
   margin: 0;
