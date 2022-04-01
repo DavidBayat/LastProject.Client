@@ -10,7 +10,7 @@ const RecipeDetail = () => {
     const [readMore, setReadMore] = useState(false);
 
     const fetchRecipe = async () => {
-        const response = await fetch(`https://localhost:7137/api/Recipes/${id}`);
+        const response = await fetch(`https://lastprojectapifood.azurewebsites.net/api/Recipes/${id}`);
         const data = await response.json();
         const { meals } = data;
         if (meals) {
