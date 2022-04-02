@@ -8,10 +8,12 @@ const Recipe = ({item} : Props) => {
     return (
         <article className="recipe">
             <img src={strMealThumb} alt={strMeal} />
-            <h3>{strMeal}</h3>
-            <Link to={`/recipe/${idMeal}`} >
-                detail
-            </Link>
+            <div className="recipe-footer">
+                <h3>{strMeal}</h3>
+                <Link to={`/recipe/${idMeal}`} className="btn btn-primary btn-detail" >
+                    detail
+                </Link>
+            </div>
         </article>
     );
 };

@@ -73,3 +73,38 @@ img {
   margin: 2.5rem auto 1rem auto;
   text-align: center;
 }
+.btn,
+.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--primaryColor);
+  border: solid 2px var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 0.8rem;
+  background: transparent;
+  border-radius: var(--mainBorderRadius);
+}
+.btn:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+.btn-primary {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border-color: transparent;
+}
+.btn-primary:hover {
+  background: var(--primaryLightColor);
+  color: var(--primaryColor);
+}
+.btn-detail {
+  padding: 0.25rem 0.4rem;
+}
+.btn-detail:hover {
+  background: var(--primaryLightColor);
+  border-color: var(--primaryLightColor);
+}
