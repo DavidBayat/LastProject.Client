@@ -82,10 +82,10 @@ const RecipeDetail = () => {
         } = recipe;
         return (
             <section className="recipe-section">
-                <Link to="/">
+                <Link to="/" className="btn btn-primary">
                     back home
                 </Link>
-                <h2>{name}</h2>
+                <h2 className="section-title">{name}</h2>
                 <div className="single-recipe">
                     <img src={image} alt={name} />
                     <div className="single-recipe-info">
