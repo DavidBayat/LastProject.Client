@@ -2,23 +2,11 @@ import React, {useState} from 'react';
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 
-const getLocalStorage = () => {
-  let list = localStorage.getItem('loginData');
-  if(list)
-  {
-      return JSON.parse(localStorage.getItem('loginData') || '{}')
-  }else
-  {
-      return [];
-  }
-}
-
 interface Props {
     setLoginData: Function
 }
 
 const Login = ({ setLoginData } : Props) => {
-    // const [logiData, setLogiData] = useState(getLocalStorage);
     const navigate = useNavigate();
     const handleLogin = (googleData : any) => {
         setLoginData(googleData.profileObj);
