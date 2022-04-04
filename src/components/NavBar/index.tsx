@@ -1,21 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css"
-import {ILoginData} from "../../Interfaces";
 
-// interface IUser {
-//     user: boolean
-// }
-// { user } : IUser
 interface Props {
     loginData: any;
-    // setLoginData: Function
 }
 const NavBar = ({loginData} : Props) => {
     const [condition, setCondition] = useState(true);
-    // const [login, setLogin] = useState(
-    //     localStorage.getItem('loginData')   
-    // );
     
     const handleLogout = () => {
       setCondition(!condition);
