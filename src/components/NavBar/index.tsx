@@ -12,12 +12,13 @@ interface Props {
     // setLoginData: Function
 }
 const NavBar = ({loginData} : Props) => {
-    const [condition, setCondition] = useState(false);
+    const [condition, setCondition] = useState(true);
     // const [login, setLogin] = useState(
     //     localStorage.getItem('loginData')   
     // );
     
     const handleLogout = () => {
+      setCondition(!condition);
       localStorage.removeItem('loginData')
     }
 
@@ -39,7 +40,7 @@ const NavBar = ({loginData} : Props) => {
                         condition ? (
                             <>
                                 <li>
-                                    <Link to="/profile">profile</Link>
+                                    <Link to="/profile/123">profile</Link>
                                 </li>
                                 <li>
                                     <Link to="/" onClick={ handleLogout }>logout</Link>

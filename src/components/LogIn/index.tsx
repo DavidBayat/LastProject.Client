@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import GoogleLogin from "react-google-login";
+import { useNavigate } from "react-router-dom";
+
 const getLocalStorage = () => {
   let list = localStorage.getItem('loginData');
   if(list)
@@ -17,9 +19,11 @@ interface Props {
 
 const Login = ({ setLoginData } : Props) => {
     // const [logiData, setLogiData] = useState(getLocalStorage);
+    const navigate = useNavigate();
     const handleLogin = (googleData : any) => {
         setLoginData(googleData.profileObj);
-        localStorage.setItem('loginData', JSON.stringify(googleData.profileObj))
+        localStorage.setItem('loginData', JSON.stringify(googleData.profileObj));
+        navigate("/");
     }
     const handleFailure = (result : any) => {
         alert(result)
