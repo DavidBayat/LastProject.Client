@@ -9,9 +9,10 @@ import {ILoginData} from "../../Interfaces";
 // { user } : IUser
 interface Props {
     loginData: any;
-    setLoginData: Function
+    // setLoginData: Function
 }
-const NavBar = ({loginData, setLoginData} : Props) => {
+const NavBar = ({loginData} : Props) => {
+    const [condition, setCondition] = useState(false);
     // const [login, setLogin] = useState(
     //     localStorage.getItem('loginData')   
     // );
@@ -21,11 +22,7 @@ const NavBar = ({loginData, setLoginData} : Props) => {
     }
 
     useEffect(() => {
-       // if (localStorage.getItem('loginData')){
-       //     setLogin(localStorage.getItem('loginData'))
-       // }else{
-       //     setLogin(null);
-       // }
+       setCondition(!condition)
     }, [loginData]);
     
     return (
@@ -39,7 +36,7 @@ const NavBar = ({loginData, setLoginData} : Props) => {
                         <Link to="/">home</Link>
                     </li>
                     {
-                        loginData !== null ? (
+                        condition ? (
                             <>
                                 <li>
                                     <Link to="/profile">profile</Link>

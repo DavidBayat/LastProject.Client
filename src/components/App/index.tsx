@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <Router>
-            <NavBar loginData={loginData} setLoginData={setLoginData} />
+            <NavBar loginData={loginData} />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/recipe/:id" element={<RecipeDetail />} />
