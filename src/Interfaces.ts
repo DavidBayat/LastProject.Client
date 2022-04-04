@@ -41,3 +41,12 @@ export interface IRecipe {
 export interface Props {
     item: IRecipes
 }
+
+export interface ILoginData {
+    email: string,
+    familyName: string,
+    givenName: string,
+    googleId: string,
+    imageUrl: string,
+    name: string
+}
