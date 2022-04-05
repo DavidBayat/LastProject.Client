@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import {IIngredients, IRecipe} from "../../Interfaces";
+import {IIngredients, ILoginData, IRecipe} from "../../Interfaces";
 import YoutubeEmbedded from "../YoutubeEmbedded";
 import "./RecipeDetail.css"
 
@@ -63,6 +63,25 @@ const RecipeDetail = () => {
         }
     };
 
+    const clickHandler = async (e : any) => {
+        e.preventDefault();
+        let result : ILoginData = JSON.parse(localStorage.getItem('loginData') || "")
+
+        const response =  await fetch('https://localhost:7137/api/FavoriteRecipes', {
+            method: 'POST',
+            body: JSON.stringify({
+                idMeal: id,
+                strMeal: recipe?.name,
+                strMealThumb: recipe?.image,
+                googleId: result.googleId
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        // post recipe
+    }
+    
     useEffect(() => {
         fetchRecipe();
     }, [id]);
@@ -82,9 +101,9 @@ const RecipeDetail = () => {
         } = recipe;
         return (
             <section className="recipe-section">
-                <Link to="/" className="btn btn-primary">
-                    back home
-                </Link>
+                <button className="btn btn-primary" onClick={ clickHandler }>
+                    Add Favorite
+                </button>
                 <h2 className="section-title">{name}</h2>
                 <div className="single-recipe">
                     <img src={image} alt={name} />
