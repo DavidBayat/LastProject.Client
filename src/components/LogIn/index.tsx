@@ -9,7 +9,21 @@ interface Props {
 
 const Login = ({ setLoginData } : Props) => {
     const navigate = useNavigate();
-    const handleLogin = (googleData : any) => {
+    const handleLogin = async (googleData : any) => {
+        // post ggoogleData.profileObj into database 
+        const response =  await fetch('https://localhost:7137/api/Users', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: googleData.profileObj.name,
+                email: googleData.profileObj.email,
+                googleId: googleData.profileObj.googleId
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+
         setLoginData(googleData.profileObj);
         localStorage.setItem('loginData', JSON.stringify(googleData.profileObj));
         navigate("/");
