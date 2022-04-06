@@ -18,8 +18,8 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/recipe/:id" element={<RecipeDetail />} />
                 <Route path="/login" element={<Login setLoginData={setLoginData} />}/>
-                <Route path="profile/:id" 
-                       element={ <ProfilePage /> } />
+                <Route path="profile/:googleId" 
+                       element={ <ProfilePage loginInfo={loginData} /> } />
             </Routes>
         </Router>
     );

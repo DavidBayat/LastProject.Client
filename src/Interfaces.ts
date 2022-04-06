@@ -39,7 +39,7 @@ export interface IRecipe {
 }
 
 export interface Props {
-    item: IRecipes
+    item: IRecipes 
 }
 
 export interface ILoginData {

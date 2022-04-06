@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css"
+import {ILoginData} from "../../Interfaces";
 
 interface Props {
-    loginData: any;
+    loginData: ILoginData | undefined;
 }
 const NavBar = ({loginData} : Props) => {
     const [condition, setCondition] = useState(true);
@@ -31,7 +32,7 @@ const NavBar = ({loginData} : Props) => {
                         condition ? (
                             <>
                                 <li>
-                                    <Link to="/profile/123">profile</Link>
+                                    <Link to={`/profile/${loginData?.googleId}`}>profile</Link>
                                 </li>
                                 <li>
                                     <Link to="/" onClick={ handleLogout }>logout</Link>
