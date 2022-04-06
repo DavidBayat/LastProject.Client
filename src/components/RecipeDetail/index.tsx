@@ -10,7 +10,7 @@ const RecipeDetail = () => {
     const [readMore, setReadMore] = useState(false);
 
     const fetchRecipe = async () => {
-        const response = await fetch(`https://lastprojectapifood.azurewebsites.net/api/Recipes/${id}`);
+        const response = await fetch(`https://lastprojectapibb.azurewebsites.net/api/Recipes/${id}`);
         const data = await response.json();
         const { meals } = data;
         if (meals) {
@@ -67,7 +67,8 @@ const RecipeDetail = () => {
         e.preventDefault();
         let result : ILoginData = JSON.parse(localStorage.getItem('loginData') || "")
 
-        const response =  await fetch('https://localhost:7137/api/FavoriteRecipes', {
+        const response =  await fetch('https://lastprojectapibb.azurewebsites.net/api/FavoriteRecipes', {
+            // mode:"no-cors",
             method: 'POST',
             body: JSON.stringify({
                 idMeal: id,
@@ -79,7 +80,7 @@ const RecipeDetail = () => {
                 'Content-Type': 'application/json'
             },
         });
-        alert("Recipe has added to favorite!")
+        alert("Recipe has been added to favorite!")
         // post recipe
     }
     
