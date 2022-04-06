@@ -79,6 +79,7 @@ const RecipeDetail = () => {
                 'Content-Type': 'application/json'
             },
         });
+        alert("Recipe has added to favorite!")
         // post recipe
     }
     

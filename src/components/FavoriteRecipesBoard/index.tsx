@@ -1,7 +1,7 @@
 import React from 'react';
 import {IRecipes} from "../../Interfaces";
 import Recipe from "../Recipe";
-import './RecipesBoard.css';
+import './FavoriteRecipesBoard.css';
 
 interface Props {
     items: IRecipes[]
@@ -10,7 +10,7 @@ interface Props {
 const RecipesBoard = ({ items } : Props) => {
     return (
         <section className="section">
-            <h2 className="section-title">Recipes</h2>
+            <h2 className="section-title">Favorite List</h2>
             
             {/*<p>number of Recipes: {items.length}</p>*/}
             <div className="recipe-list">
